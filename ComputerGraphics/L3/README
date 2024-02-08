@@ -1,0 +1,25 @@
+Podsumowanie zadania:
+
+1. kolizje w są wykrywane poprzez sprawdzenie przecięcia odcinków (boki trójkątów)
+   wyznaczanie dwóch prostych i ich punktu przecięcia (jeśli proste równoległe to już nie ma dla nich kolizji)
+   jesli punkt przecięcia jest w obu odcinkach to mamy kolizję
+
+2. argumentu sprawdzam i ustawiam w main.cpp
+
+3. zmiana rozmiaru jest uwzględniana w 
+      void AGLWindow::Resize( int _wd, int _ht )
+   wystarczy tam zamiast ustawiać wd i ht to bierzemy min(wd, ht) i ustawiamy jako obie wielkości
+
+4. szybkość poruszania jest ustalana poprzez wywołanie 
+   WaitForFixedFPS();  //  <------ użycie funkcji do szybkości poruszania
+   w Game.hpp w głównej pętli
+
+5. Renderowane tło dostępne w shaderach w pliku Background.cpp
+
+6. animacja to w zasadzie zmienna gameScale przez którą mnożę skalę danych obiektów
+   trójkąty posiadają dodatkową skalę, by móc łatwiej dostaosować ich wielkość gdybyśmy chcieli utrudnić trochę grę
+   background nie posiada dodatkowej skali, po prostu używana jest tylko skala gameScale
+
+7. instancing: TODO
+
+8. Jeśli dotkniemy prawego górnego trójkąta to ukaże się w konsoli napis "you win", w przeciwnym wypadku zakończenie gry skutkuje napisem "you lose" :)

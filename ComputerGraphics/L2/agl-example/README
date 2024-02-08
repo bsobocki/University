@@ -1,0 +1,3 @@
+Jeśli koło i krzyż będą się poruszać za wolno to proszę zmienić wartość MOVE z pliku AGL3-example.cpp na nieco większą :)
+Naciśnięcie spacji skutkuje brakiem wypełnienia w figurach :)
+Naciśnięcie klawisza ENTER je przywraca :)

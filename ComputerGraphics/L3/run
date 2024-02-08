@@ -1,0 +1,9 @@
+#!/bin/bash
+
+exec_file=binary/labyrinth
+
+if [ ! -f $exec_file ]; then
+   make
+fi
+
+$exec_file

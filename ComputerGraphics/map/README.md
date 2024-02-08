@@ -1,0 +1,1 @@
+sterowanie WSAD + QE + lewyShift-4xPrzyspieszenie + prawyShift-8xPrzyspieszenie + lewyAlt-0.25xPrzyspieszenie, F->lod=1, G->lod=1, 0->lod=4, 1->lod=8, 2->lod16 ... nie dodalem do przeslanego zadania plikow hgt bo maja za duzy rozmiar

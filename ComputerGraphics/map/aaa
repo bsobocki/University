@@ -1,0 +1,44 @@
+ // if (argc == 1) 
+   // {
+   //    std::cout<<"you have to give me a path to read files!\n";
+   //    return 1;
+   // }
+
+   auto path = std::string("data/");
+
+   // HGTreader reader;
+   // std::vector<std::vector<float>> data;
+   // for (const std::filesystem::directory_entry & entry : std::filesystem::directory_iterator(path)) {
+   //    auto path_str = entry.path().string();
+   //    reader.readDataFromDirectory(path_str, data);
+   // }
+
+
+ Shader sphereShader("shaders/sphere.vs", "shaders/sphere.fs");
+    Sphere sphere;
+
+    Shader tileShader("shaders/tile.vs", "shaders/tile.fs");
+    Tile tile(data);
+
+    RENDER_LOOP
+    {
+        speed.updateTime();
+        processInput(window);
+
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        sphereShader.setProjectionAndView(camera, SCR_WIDTH, SCR_HEIGHT);
+        sphere.setSphereBuffers();
+        sphere.draw(sphereShader);
+
+        tileShader.setProjectionAndView(camera, SCR_WIDTH, SCR_HEIGHT);
+
+        tileShader.setFloat("verticalAngle", 0.0f);
+        tileShader.setFloat("horizontalAngle", 1.0f);
+        tile.setBuffers();
+        tile.draw(tileShader);
+       
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
